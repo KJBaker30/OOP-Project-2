@@ -11,26 +11,17 @@ class Tyre():   #There is a tyre
             P_upper_bound = 1  # biggest value of P = 1
             P_lower_bound = 0  # Smallest value of P = 0
             if P_lower_bound <= P <= P_upper_bound:  # if P is between 0 and 1
-                P=True # P is valid 
+                P=True # P is valid if between 0 and 1
             else:
-                P=False 
-
-        # P = self.performance = 1 - 0.003*w - 0.00008*w*w # performance, P, is equal to 1 - 0.003w - 0.00008w^2
-        # P_upper_bound = 1  # biggest value of P = 1
-        # P_lower_bound = 0  # Smallest value of P = 0
-        # if P_lower_bound <= P <= P_upper_bound:  # if P is between 0 and 1
-        #     P=True # P is valid 
-        # else:
-        #     P=False 
-        
-        # for w in wear: # for all wear values...
-        #     print (P)  # print performance value 
+                P=False # p is invalid otherwise (e.g. if w = 100, P = 1 - 0.3 - 0.8 = -0.1  which is not between 0 and 1)
+        for w in wear: # for all wear values...
+             print (P)  # print performance value 
 
         
 
 class Track():   # There is a track
     def __init__(self, distance):  #The track has a distance - not sure how to add measurements here (e.g. km or miles)
-        self.distance =  # track has distance - unknown
+        self.distance =  # track has distance - unknown.
         # distance above sea level
         # weather conditions
         # clear/busy track?
