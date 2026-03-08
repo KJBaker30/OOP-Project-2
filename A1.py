@@ -14,8 +14,8 @@ class Tyre():   #There is a tyre
                 P=True # P is valid if between 0 and 1
             else:
                 P=False # p is invalid otherwise (e.g. if w = 100, P = 1 - 0.3 - 0.8 = -0.1  which is not between 0 and 1)
-        for w in wear: # for all wear values...
-             print (P)  # print performance value 
+        # for w in wear: # for all wear values...
+        #      print (P)  # print performance value 
 
         
 
