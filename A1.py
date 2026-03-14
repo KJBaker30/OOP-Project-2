@@ -1,6 +1,9 @@
 
 class Tyre():   #There is a tyre
     def __init__(self, performance, wear):  #The tyre has a performance value and a wear value 
+        self.performance = performance
+        self.wear = wear
+
         a = 1.5 
         b = 0.03   
         w = self.wear = a + b*w  # wear, w = a + bw 
