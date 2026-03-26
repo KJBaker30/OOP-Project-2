@@ -36,6 +36,7 @@ class Track():                                               # There is a track
         # distance above sea level
         # weather conditions
         # clear/busy track?
+        # elevation
 
        
 
@@ -50,7 +51,11 @@ class LapTime():                                             # there is a laptim
            self.seconds = seconds
 
           # self.provisional_lap_time = self.base_time + ...
+          # #Laptime(L) = BaseTime + ΔT*(1 - P(w(L)))
 
 
-       
+
+
+
+
        
