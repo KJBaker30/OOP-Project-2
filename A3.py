@@ -11,22 +11,12 @@ class Tyre():                                                # there is a tyre
         self.deg = 0.0                                       # tyre deg = 0.0
         self.performance = 1.0                               # tyre performance = 1.0
 
-    def updateDegradation(self, degradation_increase):       # update of tyre deg value 
-        self.degradation_increase = degradation_increase     
+    def updateDegradation(self):                             # update of tyre deg value     
         degradation_increase = a + b*self.deg                # deg increase = 1.5 + 0.03(0)  -  base decrease in deg per lap = 1.5
-        
-        self.deg = self.deg + degradation_increase          # 0 + new deg value(= 1.5) = new deg value 
-        return self.deg                                      # replace old deg value with new deg value & store
-    
-    def updatePerformance(self, performance_decrease):       # update of tyre performance
-        self.performance_decrease = performance_decrease
-        performance_decrease = 1 - 0.003*self.deg - 0.00008*self.deg*self.deg   # performance decrease = 1 - deg value(0.03) - deg value ^2 (0.00008)
 
-        self.performance = self.performance - performance_decrease             # performance value - decrease = new performance value
-        return self.performance                              # replace performance value with new value and store
-    
-print(Tyre.updateDegradation)
-print(Tyre.updatePerformance)
+    def updatePerformance(self):                             # update of tyre performance
+        performance_decrease = 1 - 0.003*self.deg - 0.00008*self.deg*self.deg   # performance decrease = 1 - deg value(0.03) - deg value ^2 (0.00008)
+       
 
         
         
@@ -52,23 +42,26 @@ class LapTime():                                             # there is a laptim
            self.base_time = base_time
            base_time = 1*minutes + 00*seconds
 
-           
-
-
-
-          # self.provisional_lap_time = self.base_time + ...
-          # #Laptime(L) = BaseTime + L*(P(w(L)))
+          # provisional_lap_time = base_time + 
+          # Laptime(L) = BaseTime + L*(P(w(L)))
 
 
 
 
 tyre_one = Tyre('0.0', '1.0')
 
-tyre_one.updateDegradation('a + b*self.deg')
+tyre_one.updateDegradation()
 print('Tyre Degradation:', tyre_one.deg)
-tyre_one.updatePerformance('1 - 0.003*self.deg - 0.00008*self.deg*self.deg')
-print('Performance Value:', ((1 - tyre_one.performance)*100),'%')
+tyre_one.updatePerformance()
+print('Performance Value:', ((tyre_one.performance)*100),'%')
 
+
+
+for lap in range(1,10):
+    tyre_one.updateDegradation()
+    tyre_one.updatePerformance()
+    print('Lap', lap, 'Tyre Degradation:', (tyre_one.deg))
+    print('Lap', lap, 'Performance Value:', ((tyre_one.performance)*100), '%')
 
 
 
