@@ -43,9 +43,8 @@ class LapTime():                                             # there is a laptim
            self.seconds = seconds
            self.base_time = base_time
            base_time = 1*minutes + 00*seconds
-
-          # provisional_lap_time = base_time + 
-          # Laptime(L) = BaseTime + L*(P(w(L)))
+           self.provisional_lap_time = base_time + self.provisional_lap_time*(Tyre.performance(Tyre.deg(self.provisional_lap_time)))
+# print('Provisional Lap Time', LapTime.provisional_lap_time)
 
 
 
