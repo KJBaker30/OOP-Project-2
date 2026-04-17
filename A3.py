@@ -13,10 +13,12 @@ class Tyre():                                                # there is a tyre
 
     def updateDegradation(self):                             # update of tyre deg value     
         degradation_increase = a + b*self.deg                # deg increase = 1.5 + 0.03(0)  -  base decrease in deg per lap = 1.5
+        self.deg = round(degradation_increase + self.deg, 3)
+        
 
     def updatePerformance(self):                             # update of tyre performance
         performance_decrease = 1 - 0.003*self.deg - 0.00008*self.deg*self.deg   # performance decrease = 1 - deg value(0.03) - deg value ^2 (0.00008)
-       
+        self.performance = round(performance_decrease, 5)
 
         
         
@@ -57,7 +59,7 @@ print('Performance Value:', ((tyre_one.performance)*100),'%')
 
 
 
-for lap in range(1,10):
+for lap in range(0,10):
     tyre_one.updateDegradation()
     tyre_one.updatePerformance()
     print('Lap', lap, 'Tyre Degradation:', (tyre_one.deg))
